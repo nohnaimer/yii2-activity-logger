@@ -20,7 +20,7 @@ $formatter = Yii::$app->formatter;
     </span>
 
     <?php if ($model->env): ?>
-        <small class="pull-right"><?= $model->getEnv() ?></small>
+        <small class="float-right"><?= $model->getEnv() ?></small>
     <?php endif; ?>
 </h4>
 <ul class="details">
@@ -28,20 +28,20 @@ $formatter = Yii::$app->formatter;
         <?php if (is_string($values)): ?>
             <li>
                 <?php if(is_numeric($attribute) || empty($attribute)): ?>
-                    <?= $values; ?>
+                    <?= $values ?>
                 <?php else: ?>
-                    <strong><?= $attribute ?></strong> <?= $values; ?>
+                    <strong><?= $attribute ?></strong> <?= $values ?>
                 <?php endif; ?>
             </li>
         <?php else: ?>
             <li>
                 <?= Yii::t('lav45/logger', '<strong>{attribute}</strong> has been changed', ['attribute' => $attribute]) ?>
 
-                <?= Yii::t('lav45/logger', 'from'); ?>
-                <strong><i class="details-text"><?= $values->getOldValue(); ?></i></strong>
+                <?= Yii::t('lav45/logger', 'from') ?>
+                <strong><i class="details-text"><?= $values->getOldValue() ?></i></strong>
 
-                <?= Yii::t('lav45/logger', 'to'); ?>
-                <strong><i class="details-text"><?= $values->getNewValue(); ?></i></strong>
+                <?= Yii::t('lav45/logger', 'to') ?>
+                <strong><i class="details-text"><?= $values->getNewValue() ?></i></strong>
             </li>
         <?php endif; ?>
     <?php endforeach; ?>
